@@ -136,6 +136,7 @@ public class Components
 		
 		shooterTopEncoder = new EncoderTalon3075(shooterTop);
 		shooterTopEncoder.setDistancePerPulse(10000);
+		
 		shooterBottomEncoder = new EncoderTalon3075(shooterBottom);
 		shooterBottomEncoder.setDistancePerPulse(10000);
 		shooterBottomEncoder.invert(true);
@@ -182,10 +183,13 @@ public class Components
 		button1 = new JoystickButton(driveStick, 1);
 		button1.whenPressed(smallArmPiston.ToggleCommand());
 		
-//		button2 = new JoystickButton(systemStick, 2);
-//		button2.whenPressed(bigArmPiston.ToggleCommand());
+		button2 = new JoystickButton(systemStick, 5);
+		button2.whenPressed(bigArmPiston.ToggleCommand());
 		
-		button2 = new JoystickButton(driveStick, 3);
+		button5 = new JoystickButton(systemStick, 6);
+		button5.whenPressed(bigArmPiston.CloseCommand());
+		
+//		button2 = new JoystickButton(driveStick, 3);
 //		button2.toggleWhenPressed(new OpenRisingGate());
 		
 		button3 = new JoystickButton(systemStick, 3);
@@ -194,25 +198,25 @@ public class Components
 		 
 		button4 = new JoystickButton(systemStick, 4);
 		button4.whenPressed(shooterAnglePiston.ToggleCommand());
+
+		button8 = new JoystickButton(systemStick, 2);
+		button8.toggleWhenPressed(new InsertBall());
 		
 //		button4 = new JoystickButton(driveStick, 4);
 //		button4.whenPressed(new OpenFallingGate());
 		 
-		button4 = new JoystickButton(driveStick, 4);
-		button4.whenPressed(new Shoot());
+//		button4 = new JoystickButton(driveStick, 4);
+//		button4.whenPressed(new Shoot());
 		
-		button5 = new JoystickButton(systemStick, 5);
-		button5.whileHeld(Robot.winch.rotateWinch());
+//		button5 = new JoystickButton(systemStick, 5);
+//		button5.whileHeld(Robot.winch.rotateWinch());
 		
-		button6 = new JoystickButton(systemStick, 6);
-		button6.whileHeld(Robot.winch.reverseWinch());
+//		button6 = new JoystickButton(systemStick, 6);
+//		button6.whileHeld(Robot.winch.reverseWinch());
 		
 //		button7 = new JoystickButton(systemStick, 4);
 //		button7.toggleWhenPressed(Robot.shooter.setShooterSpeed(Constants.shooterBallInsertTopSpeed, Constants.shooterBallInsertBottomSpeed));
 //		button7.toggleWhenPressed(new PrepareTrajectory());
-
-		button8 = new JoystickButton(systemStick, 2);
-		button8.toggleWhenPressed(new InsertBall());
 		
 //		button9 = new JoystickButton(systemStick, 1);
 //		button9.toggleWhenPressed(Robot.shooter.setShooterSpeed(Constants.shooterBallInsertTopSpeed, Constants.shooterBallInsertBottomSpeed));
@@ -220,31 +224,31 @@ public class Components
 //		button9 = new JoystickButton(systemStick, 2);
 //		button9.toggleWhenPressed(new CenterOnTarget());
 		
-		button10 = new JoystickButton(driveStick, 5);
-		button10.whenPressed(cameraServoAngle.goToAngle((Constants.shootAngle + Constants.insertAngle)/2));
+//		button10 = new JoystickButton(driveStick, 5);
+//		button10.whenPressed(cameraServoAngle.goToAngle((Constants.shootAngle + Constants.insertAngle)/2));
+//		
+//		button11 = new JoystickButton(systemStick, 1);
+//		button11.toggleWhenPressed(new Shoot());
 		
-		button11 = new JoystickButton(systemStick, 1);
-		button11.toggleWhenPressed(new Shoot());
+//		button12 = new JoystickButton(systemStick, 9);
+//		button12.toggleWhenPressed(Robot.shooter.setShooterSpeed(0, -4));
 		
-		button12 = new JoystickButton(systemStick, 9);
-		button12.toggleWhenPressed(Robot.shooter.setShooterSpeed(0, -4));
+//		button13 = new JoystickButton(driveStick, 7);
+//		button13.whenPressed(cameraServoAngle.ButtonToggle(Constants.shootAngle, Constants.insertAngle));
 		
-		button13 = new JoystickButton(driveStick, 7);
-		button13.whenPressed(cameraServoAngle.ButtonToggle(Constants.shootAngle, Constants.insertAngle));
-		
-		button15 = new JoystickButton(systemStick, 8);
-		button15.toggleWhenPressed(Components.shooterAnglePiston.OpenCommand());
+//		button15 = new JoystickButton(systemStick, 8);
+//		button15.toggleWhenPressed(Components.shooterAnglePiston.OpenCommand());
 		
 //
 //		button14 = new JoystickButton(systemStick, 12);
 //		button14.toggleWhenPressed(Components.shooterAnglePiston.CloseCommand());
 		
 		
-		button7 = new JoystickButton(driveStick, 6);
-		button7.toggleWhenPressed(Components.shifter.ToggleCommand());
+//		button7 = new JoystickButton(driveStick, 6);
+//		button7.toggleWhenPressed(Components.shifter.ToggleCommand());
 //		
-		button16 = new JoystickButton(driveStick, 3);
-		button16.toggleWhenPressed(Robot.shooter.setShooterSpeed(11.6, 11.6));
+//		button16 = new JoystickButton(driveStick, 3);
+//		button16.toggleWhenPressed(Robot.shooter.setShooterSpeed(11.6, 11.6));
 		
 	}
 }

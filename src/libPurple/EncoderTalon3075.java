@@ -27,7 +27,7 @@ public class EncoderTalon3075 implements Encoder3075{
 		encoderPulsesPerRotation = pulses;
 	}
 	
-	@Override
+	
 	public void invert(boolean inverted)
 	{
 		this.inverted = inverted ? -1 : 1;
@@ -37,7 +37,7 @@ public class EncoderTalon3075 implements Encoder3075{
 	 * 
 	 * @return Encoder's rate for 100ms.
 	 */
-	@Override
+	
 	public double getRate()
 	{
 		double returnValue = (myTalon.getSpeed() / dpp) * inverted * 10;
@@ -54,20 +54,20 @@ public class EncoderTalon3075 implements Encoder3075{
 		return myTalon.getPosition() * inverted;
 	}
 	
-	@Override
+	
 	public double getDistance()
 	{
 		double returnValue = (myTalon.getPosition() - resetPoint) / dpp * inverted;
 		return Math.abs(returnValue) < minimumValue ? 0 : returnValue;
 	}
 	
-	@Override
+	
 	public void setDistancePerPulse(double dpp)
 	{
 		this.dpp = dpp;
 	}
 	
-	@Override
+	
 	public void reset()
 	{
 		resetPoint = myTalon.getPosition();

@@ -125,9 +125,10 @@ class ManualShooter extends Command
 
 	@Override
 	protected void execute() {
+		
 		// TODO Auto-generated method stub
 		Robot.shooter.disablePID();
-		Robot.shooter.setRaw(-(Components.systemStick.getRawAxis(2) - 1) / 2);
+		Robot.shooter.setRaw(1 - ((Components.systemStick.getRawAxis(2) + 1) / 2));
 //		Robot.shooter.setRaw(Components.systemStick.getRawAxis(1)*-1);
 
 		SmartDashboard.putNumber("shooter bottom speed", Components.shooterBottomEncoder.getRate());

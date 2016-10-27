@@ -1,7 +1,6 @@
 package libPurple;
 
 import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.DriverStation;
 
 public class CANTalon3075 extends CANTalon implements SpeedController3075 {
     
@@ -58,13 +57,11 @@ public class CANTalon3075 extends CANTalon implements SpeedController3075 {
 		this.inverted = isInverted ? -1 : 1;
 	}
 
-	@Override
 	public void setMotorBound(double newMotorBound) {
 		// TODO Auto-generated method stub
 		motorBound = newMotorBound;
 	}
 	
-	@Override
 	public void setSlave(SpeedController3075 slave) {
 		// TODO Auto-generated method stub
 		this.slave = (CANTalon3075) slave;

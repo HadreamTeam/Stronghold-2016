@@ -110,7 +110,7 @@ class TimedCycle extends Command {
     }
 
     protected void initialize() {
-    	mySol.set(mySol.get() == DoubleSolenoid.Value.kReverse ? DoubleSolenoid.Value.kForward : DoubleSolenoid.Value.kReverse);
+    	mySol.set(DoubleSolenoid.Value.kForward);
     }
 
     protected void execute() {
@@ -121,7 +121,7 @@ class TimedCycle extends Command {
     }
 
     protected void end() {
-    	mySol.set(mySol.get() == DoubleSolenoid.Value.kReverse ? DoubleSolenoid.Value.kForward : DoubleSolenoid.Value.kReverse);
+    	mySol.set(DoubleSolenoid.Value.kReverse);
     }
 
     protected void interrupted() {

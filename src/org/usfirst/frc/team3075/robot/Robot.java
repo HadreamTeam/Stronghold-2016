@@ -73,16 +73,16 @@ public class Robot extends IterativeRobot {
         chooser.addObject("Block", new AutonomousCrossBlock());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto modeses", chooser);
-        c = new USBCamera("cam0");
-        c.setBrightness(7);
-        CameraServer.getInstance().startAutomaticCapture(c);
+//        c = new USBCamera("cam0");
+//        c.setBrightness(7);
+//        CameraServer.getInstance().startAutomaticCapture(c);
 //        c.setWhiteBalanceHoldCurrent();
 //        c.setExposureManual(Preferences.getInstance().getInt("exp", 0));
 //        CameraServer.getInstance().startAutomaticCapture("cam0");
-        imageDetection = new ImageDetection3075();
-    	Components.cameraServoAngle.setAngle(Constants.shootAngle);
+//        imageDetection = new ImageDetection3075();
+//    	Components.cameraServoAngle.setAngle(Constants.shootAngle);
     	
-    	Components.shifter.set(Value.kForward);
+    	//Components.shifter.set(Value.kForward);
     }
 	
 	/**
@@ -183,28 +183,28 @@ public class Robot extends IterativeRobot {
 //        Components.cameraServoAngle.setAngle(Preferences.getInstance().getDouble("angle", 0));
         
         Rectangle rect = null;
-		try {
-			rect = imageDetection.getRectangle();
-			rect.setTargetRatio(imageDetection.targetRatio);
-			SmartDashboard.putNumber("Image Hieght" , rect.getHeight());
-			SmartDashboard.putNumber("Image Width" , rect.getWidth());
-			SmartDashboard.putNumber("Center x" , rect.getCenter().getX());
-			SmartDashboard.putNumber("Center diff", rect.getCenter().getX() - Constants.centerTarget);
-			SmartDashboard.putNumber("Target Angle" , rect.getAngle());
-			SmartDashboard.putNumber("Target to Center Angle" , rect.getAngle() - Constants.errorAngle);
-
-
-
-
-
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			SmartDashboard.putNumber("Image Hieght", -1);
-			SmartDashboard.putNumber("Image Width" , -1);
-			SmartDashboard.putNumber("Center x" , -1);
-		} 
+//		try {
+//			rect = imageDetection.getRectangle();
+//			rect.setTargetRatio(imageDetection.targetRatio);
+//			SmartDashboard.putNumber("Image Hieght" , rect.getHeight());
+//			SmartDashboard.putNumber("Image Width" , rect.getWidth());
+//			SmartDashboard.putNumber("Center x" , rect.getCenter().getX());
+//			SmartDashboard.putNumber("Center diff", rect.getCenter().getX() - Constants.centerTarget);
+//			SmartDashboard.putNumber("Target Angle" , rect.getAngle());
+//			SmartDashboard.putNumber("Target to Center Angle" , rect.getAngle() - Constants.errorAngle);
+//
+//
+//
+//
+//
+//
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			SmartDashboard.putNumber("Image Hieght", -1);
+//			SmartDashboard.putNumber("Image Width" , -1);
+//			SmartDashboard.putNumber("Center x" , -1);
+//		} 
 		
 		SmartDashboard.putNumber("Drive Right Rate", driveSystem.getRightRate());
 		SmartDashboard.putNumber("Drive Left Rate", driveSystem.getLeftRate());

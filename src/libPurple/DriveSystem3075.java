@@ -45,7 +45,7 @@ public class DriveSystem3075 extends Subsystem
 //	PIDController pidDiffRate;
 	
 	private double maxSpeed = 1.25;
-	private double accellimit = 0.5;
+	private double accellimit = 0.1;
 	
 	private boolean accelControl = false;
 	private BuiltInAccelerometer accel = new BuiltInAccelerometer();
